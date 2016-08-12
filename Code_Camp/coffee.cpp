@@ -96,21 +96,19 @@ void Store_Run(char input, cupSize_t menu[], size_t menuLen){
 void Buy(cupSize_t menu[], int* tCoffee, float* tMoney, size_t menuLen){
 	printf("Select from the following coffee options to purchase:\n");
 	printf("Selection    Size(oz)   Cost\n");
-	int sel = 0;
 
 	int i;
 	for(i = 0; i < menuLen; i++)
-		printf("%d. %s\t%d\t$%.2f\n", sel + i, menu[i].name, menu[i].size, menu[i].cost);
+		printf("%d. %s\t%d\t$%.2f\n", i, menu[i].name, menu[i].size, menu[i].cost);
 
 	int input;
 	scanf("%d", &input);
 
-	int delta = input - sel;
-	if(delta >= 0 && delta < menuLen){
-		printf("You have purchased a %s coffee for $%.2f\n", menu[delta].name, menu[delta].cost);
-		menu[delta].tCups++;
-		*tCoffee += menu[delta].size;
-		*tMoney += menu[delta].cost;
+	if(input >= 0 && input < menuLen){
+		printf("You have purchased a %s coffee for $%.2f\n", menu[input].name, menu[input].cost);
+		menu[input].tCups++;
+		*tCoffee += menu[input].size;
+		*tMoney += menu[input].cost;
 	}
 	else
 		printf("Invalid selection\n");
