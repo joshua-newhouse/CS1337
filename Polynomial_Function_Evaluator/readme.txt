@@ -1,1 +1,1 @@
-The source files for the polynomial function evaluator program.  The program reads polynomial functions from an input file, evaluates them, and then writes the function in its standard form as well as its value to an output file.
+The source files for the polynomial function evaluator program.  The program reads polynomial functions from an input file, evaluates them, and then writes the function in its standard form as well as its value to an output file.  Also included is an example input file.
